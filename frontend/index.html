@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Startup Validator</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jsPDF for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<main class="container">
+
+<header class="header-section">
+
+<div class="logo">🚀</div>
+
+<h1>AI Startup Idea Validator</h1>
+
+<p class="subtitle">
+Get instant AI-powered feedback on your startup idea.
+</p>
+
+</header>
+
+
+<section class="input-card">
+
+<label for="idea">Describe your startup idea</label>
+
+<textarea 
+id="idea"
+placeholder="Example: AI platform that automates legal document filing for small businesses..."
+></textarea>
+
+
+<div class="controls">
+
+<div class="select-wrapper">
+
+<select id="analysisType">
+
+<option value="quick">⚡ Quick Analysis</option>
+
+<option value="detailed">📊 Detailed Analysis</option>
+
+</select>
+
+</div>
+
+
+<button 
+class="theme-toggle" 
+onclick="toggleDarkMode()" 
+aria-label="Toggle Dark Mode">
+
+<span class="icon">🌙</span> Toggle Theme
+
+</button>
+
+</div>
+
+
+<button 
+class="analyze-btn" 
+onclick="analyzeIdea()">
+
+<span>Analyze Idea</span>
+
+</button>
+
+</section>
+
+
+<!-- Loading -->
+
+<div id="loading" class="loading-container" style="display:none">
+
+<div class="spinner"></div>
+
+<p>Analyzing your idea with AI...</p>
+
+</div>
+
+
+<!-- Error message -->
+
+<div id="errorBox" style="display:none; color:red; margin-top:15px;"></div>
+
+
+<!-- Report Output -->
+
+<section id="report" class="report-card" style="display:none"></section>
+
+
+<!-- PDF Download -->
+
+<button 
+id="downloadBtn" 
+class="secondary-btn" 
+onclick="downloadPDF()"
+style="display:none">
+
+📥 Download Report PDF
+
+</button>
+
+</main>
+
+
+<footer class="footer">
+
+<p>AI Startup Validator • Built for innovators</p>
+
+</footer>
+
+
+<!-- JS Script -->
+<script src="script.js"></script>
+
+</body>
+
+</html>

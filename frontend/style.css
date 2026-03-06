@@ -1,0 +1,204 @@
+/* --- Modern Variable System --- */
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: rgba(226, 232, 240, 0.8);
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Dark Mode Variables --- */
+body.dark-mode {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border: rgba(51, 65, 85, 0.8);
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    backdrop-filter: blur(12px);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+/* --- Header & Typography --- */
+.header-section {
+    margin-bottom: 32px;
+}
+
+.logo {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3));
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* --- Input Area --- */
+.input-card {
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 2px solid var(--border);
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--text-main);
+    font-size: 1rem;
+    resize: none;
+    transition: var(--transition);
+}
+
+.dark-mode textarea {
+    background: rgba(15, 23, 42, 0.5);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+/* --- Controls & Buttons --- */
+.controls {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.select-wrapper {
+    flex: 2;
+}
+
+select, .theme-toggle {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text-main);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.analyze-btn {
+    width: 100%;
+    padding: 18px;
+    border-radius: 16px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+    transition: var(--transition);
+}
+
+.analyze-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+}
+
+/* --- Dynamic States --- */
+#loading {
+    display: none;
+    margin: 20px 0;
+    font-weight: 600;
+    color: var(--primary);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.report-card {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    border-left: 4px solid var(--primary);
+    text-align: left;
+    min-height: 50px;
+}
+
+#downloadBtn {
+    display: none; /* Hidden until report exists */
+    margin-top: 20px;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#downloadBtn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
