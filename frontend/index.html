@@ -2,132 +2,116 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AI Startup Validator</title>
+<title>AI Startup Validator</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <!-- jsPDF for PDF export -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+
+/* smooth scrolling */
+html{
+scroll-behavior:smooth;
+}
+
+</style>
+
 </head>
 
-<body>
 
-<main class="container">
+<body class="landing">
 
-<header class="header-section">
+<!-- HEADER -->
 
-<div class="logo">🚀</div>
+<header class="site-header">
 
-<h1>AI Startup Idea Validator</h1>
+<div class="logo">
+AI Startup Validator
+</div>
 
-<p class="subtitle">
-Get instant AI-powered feedback on your startup idea.
-</p>
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="analyzer.html">Analyze Idea</a>
+
+<a href="#about">About</a>
+
+<a href="https://github.com/yogeshkori01/startup-validator" target="_blank">
+GitHub
+</a>
+
+</nav>
 
 </header>
 
 
-<section class="input-card">
 
-<label for="idea">Describe your startup idea</label>
+<!-- HERO SECTION -->
 
-<textarea 
-id="idea"
-placeholder="Example: AI platform that automates legal document filing for small businesses..."
-></textarea>
+<main>
 
+<section class="hero">
 
-<div class="controls">
+<h1>AI Startup Validator</h1>
 
-<div class="select-wrapper">
+<p class="description">
+Validate your startup idea using AI-powered analysis.
+Discover market potential, competition insights, and expert recommendations instantly.
+</p>
 
-<select id="analysisType">
-
-<option value="quick">⚡ Quick Analysis</option>
-
-<option value="detailed">📊 Detailed Analysis</option>
-
-</select>
-
-</div>
-
-
-<button 
-class="theme-toggle" 
-onclick="toggleDarkMode()" 
-aria-label="Toggle Dark Mode">
-
-<span class="icon">🌙</span> Toggle Theme
-
-</button>
-
-</div>
-
-
-<button 
-class="analyze-btn" 
-onclick="analyzeIdea()">
-
-<span>Analyze Idea</span>
-
-</button>
+<a href="analyzer.html" class="cta-button">
+Analyze Your Idea
+</a>
 
 </section>
 
 
-<!-- Loading -->
 
-<div id="loading" class="loading-container" style="display:none">
+<!-- ABOUT SECTION -->
 
-<div class="spinner"></div>
+<section id="about" class="about-section">
 
-<p>Analyzing your idea with AI...</p>
+<h2>About This Tool</h2>
 
-</div>
+<p>
+AI Startup Validator helps founders evaluate startup ideas using AI.
+The system analyzes market potential, competition level, technical difficulty,
+and provides suggestions to improve the business concept.
+</p>
 
-
-<!-- Error message -->
-
-<div id="errorBox" style="display:none; color:red; margin-top:15px;"></div>
-
-
-<!-- Report Output -->
-
-<section id="report" class="report-card" style="display:none"></section>
-
-
-<!-- PDF Download -->
-
-<button 
-id="downloadBtn" 
-class="secondary-btn" 
-onclick="downloadPDF()"
-style="display:none">
-
-📥 Download Report PDF
-
-</button>
+</section>
 
 </main>
 
 
+
+<!-- FOOTER -->
+
 <footer class="footer">
 
-<p>AI Startup Validator • Built for innovators</p>
+<p>AI Startup Validator • Built using FastAPI & AI</p>
+
+<p>© 2026 Yogesh Kori</p>
 
 </footer>
 
 
-<!-- JS Script -->
-<script src="script.js"></script>
+
+<!-- Force page to open at top -->
+
+<script>
+
+window.onload = function(){
+window.scrollTo(0,0);
+}
+
+</script>
 
 </body>
 
