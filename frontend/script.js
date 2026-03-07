@@ -29,6 +29,7 @@ async function analyzeIdea() {
         });
 
         const data = await response.json();
+        console.log(data);
 
         loading.style.display = "none";
 
@@ -43,9 +44,15 @@ async function analyzeIdea() {
         const similar = analysis.similar_startups || [];
         const suggestions = analysis.suggestions || [];
 
-        const marketPotential = analysis.idea_scores?.market_potential || "N/A";
-        const competitionLevel = analysis.idea_scores?.competition_level || "N/A";
+        const marketPotential =
+            analysis.idea_scores && analysis.idea_scores.market_potential
+                ? analysis.idea_scores.market_potential
+                : "N/A";
 
+        const competitionLevel =
+            analysis.idea_scores && analysis.idea_scores.competition_level
+                ? analysis.idea_scores.competition_level
+                : "N/A";
         report.innerHTML = `
 
         <h2 class="report-title">Startup Analysis Report</h2>
@@ -126,10 +133,10 @@ function downloadPDF() {
 
     const analysis = currentReport.ai_analysis;
 
-   const marketPotential = analysis.idea_scores?.market_potential || "N/A";
+    const marketPotential = analysis.idea_scores?.market_potential || "N/A";
 
-   const competitionLevel = analysis.idea_scores?.competition_level || "N/A";
-   
+    const competitionLevel = analysis.idea_scores?.competition_level || "N/A";
+
     doc.setFontSize(18);
     doc.text("AI Startup Idea Analysis Report", 20, 20);
 
